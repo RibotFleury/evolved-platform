@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "about": "Qui sommes-nous",
+    "services": "Services",
+    "projects": "Projets",
+    "contact": "Contact",
+    "switchTo": "Passer en"
+  },
+  "home": {
+    "subtitle": "Apprendre aujourd’hui, évoluer demain.",
+    "description": "Nous catalysons la transformation numérique en Afrique en misant sur les talents locaux et des solutions digitales accessibles.",
+    "ctaServices": "Découvrir nos services",
+    "ctaContact": "Nous contacter",
+    "sections": {
+      "servicesTitle": "Nos services",
+      "projectsTitle": "Projets en cours",
+      "impactTitle": "Notre impact"
+    }
+  },
+  "about": {
+  "title": "Qui sommes-nous",
+  "description": "EvolveD est une startup digitale dédiée à la transformation numérique en Afrique.",
+  "mission": "Notre mission est de former, accompagner et innover pour construire une Afrique numériquement autonome."
+},
+"servicesPage": {
+  "title": "Nos Services",
+  "description": "Nous proposons des solutions digitales modernes adaptées aux réalités africaines."
+},
+"projectsPage": {
+  "title": "Projets en cours",
+  "description": "Découvrez les initiatives sur lesquelles nous travaillons actuellement."
+},
+"contactPage": {
+  "title": "Contact",
+  "description": "Entrons en contact pour discuter de votre projet digital."
+},
+"servicesList": [
+  {
+    "title": "Web & Mobile",
+    "description": "Sites, applications et plateformes modernes."
+  },
+  {
+    "title": "IA & Automatisation",
+    "description": "Solutions intelligentes pour gagner en efficacité."
+  },
+  {
+    "title": "Cybersécurité",
+    "description": "Bonnes pratiques, audit, protection des systèmes."
+  }
+],
+"projectsList": [
+  {
+    "title": "Plateforme EvolveD",
+    "status": "En cours",
+    "description": "Plateforme vitrine bilingue + gestion des projets (FR/EN)."
+  },
+  {
+    "title": "Programme de Formation",
+    "status": "En cours",
+    "description": "Parcours de formation pratique orienté projets."
+  }
+]
+}

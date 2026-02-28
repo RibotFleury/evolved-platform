@@ -4,6 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 
+type NavLabels = {
+  about: string;
+  services: string;
+  projects: string;
+  contact: string;
+};
+
 function getLocaleFromPath(pathname: string): Locale {
   const maybeLocale = pathname.split("/")[1];
   return (locales.includes(maybeLocale as Locale) ? maybeLocale : "fr") as Locale;
@@ -15,7 +22,14 @@ function switchLocale(pathname: string, nextLocale: Locale) {
   return segments.join("/") || `/${nextLocale}`;
 }
 
-export default function Navbar() {
+export default function Navbar({ labels }: { labels?: NavLabels }) {
+  const safe: NavLabels = labels ?? {
+    about: "About",
+    services: "Services",
+    projects: "Projects",
+    contact: "Contact",
+  };
+
   const pathname = usePathname();
   const currentLocale = getLocaleFromPath(pathname);
 
@@ -31,16 +45,16 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <Link href={`/${currentLocale}/about`} className="text-sm hover:underline">
-            About
+            {safe.about}
           </Link>
           <Link href={`/${currentLocale}/services`} className="text-sm hover:underline">
-            Services
+            {safe.services}
           </Link>
           <Link href={`/${currentLocale}/projects`} className="text-sm hover:underline">
-            Projects
+            {safe.projects}
           </Link>
           <Link href={`/${currentLocale}/contact`} className="text-sm hover:underline">
-            Contact
+            {safe.contact}
           </Link>
 
           <Link

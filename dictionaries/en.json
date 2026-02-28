@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "switchTo": "Switch to"
+  },
+  "home": {
+    "subtitle": "Learn today, evolve tomorrow.",
+    "description": "We accelerate digital transformation in Africa by empowering local talent and delivering accessible digital solutions.",
+    "ctaServices": "Explore our services",
+    "ctaContact": "Contact us",
+    "sections": {
+      "servicesTitle": "Our services",
+      "projectsTitle": "Ongoing projects",
+      "impactTitle": "Our impact"
+    }
+  },
+  "about": {
+  "title": "About Us",
+  "description": "EvolveD is a digital startup dedicated to digital transformation in Africa.",
+  "mission": "Our mission is to train, empower and innovate to build a digitally autonomous Africa."
+},
+"servicesPage": {
+  "title": "Our Services",
+  "description": "We deliver modern digital solutions adapted to African realities.",
+  "cybersecurity": "Cybersécurité"
+},
+"projectsPage": {
+  "title": "Ongoing Projects",
+  "description": "Discover the initiatives we are currently working on."
+},
+"contactPage": {
+  "title": "Contact",
+  "description": "Let’s connect to discuss your digital project."
+},
+"servicesList": [
+  {
+    "title": "Web & Mobile",
+    "description": "Modern websites, applications and digital platforms."
+  },
+  {
+    "title": "AI & Automation",
+    "description": "Smart solutions to improve efficiency."
+  },
+  {
+    "title": "Cybersecurity",
+    "description": "Best practices, audits and system protection."
+  }
+],
+"projectsList": [
+  {
+    "title": "EvolveD Platform",
+    "status": "Ongoing",
+    "description": "Bilingual showcase platform + project management (FR/EN)."
+  },
+  {
+    "title": "Training Program",
+    "status": "Ongoing",
+    "description": "Project-oriented practical training pathway."
+  }
+]
+}
