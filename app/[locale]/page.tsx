@@ -1,5 +1,21 @@
 import { getDictionary } from "@/lib/i18n/getDictionary";
 import type { Locale } from "@/lib/i18n/config";
+import { buildMetadata } from "@/lib/seo/buildMetadata";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: "fr" | "en" }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const dict = await getDictionary(locale);
+
+  return buildMetadata({
+    title: dict.metadata.home.title,
+    description: dict.metadata.home.description,
+  });
+}
 
 export default async function HomePage({
   params,
