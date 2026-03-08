@@ -95,5 +95,35 @@
     "title": "EvolveD | Contact",
     "description": "Get in touch with EvolveD to discuss your digital project, training needs or partnership opportunities."
   }
+},
+"homeCards": {
+  "services": [
+    {
+      "title": "Web & Mobile Development",
+      "description": "We build modern, high-performing platforms tailored to local needs."
+    },
+    {
+      "title": "Artificial Intelligence",
+      "description": "We integrate smart solutions to automate, analyze and innovate."
+    },
+    {
+      "title": "Cybersecurity",
+      "description": "We help organizations protect their systems and data."
+    }
+  ],
+  "impact": [
+    {
+      "title": "Training",
+      "description": "Training young African talent in useful digital skills."
+    },
+    {
+      "title": "Innovation",
+      "description": "Creating solutions adapted to local realities and concrete needs."
+    },
+    {
+      "title": "Transformation",
+      "description": "Supporting companies and institutions in their digital evolution."
+    }
+  ]
 }
 }
