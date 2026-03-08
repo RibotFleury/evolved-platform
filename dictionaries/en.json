@@ -70,5 +70,30 @@
   "title": "Something went wrong",
   "description": "We could not send your message. Please try again.",
   "backContact": "Back to contact form"
+},
+"metadata": {
+  "siteName": "EvolveD",
+  "defaultTitle": "EvolveD | Digital Transformation in Africa",
+  "defaultDescription": "EvolveD drives digital transformation in Africa through training, innovation, and accessible digital solutions.",
+  "home": {
+    "title": "EvolveD | Home",
+    "description": "Discover EvolveD, a digital startup training talent, innovating and supporting digital transformation in Africa."
+  },
+  "about": {
+    "title": "EvolveD | About",
+    "description": "Learn more about EvolveD’s mission, vision and values for a digitally autonomous Africa."
+  },
+  "services": {
+    "title": "EvolveD | Services",
+    "description": "Explore EvolveD’s digital services: web, mobile, artificial intelligence and cybersecurity."
+  },
+  "projects": {
+    "title": "EvolveD | Projects",
+    "description": "Browse EvolveD’s ongoing projects and discover our impact through concrete initiatives."
+  },
+  "contact": {
+    "title": "EvolveD | Contact",
+    "description": "Get in touch with EvolveD to discuss your digital project, training needs or partnership opportunities."
+  }
 }
 }

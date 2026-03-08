@@ -69,5 +69,30 @@
   "title": "Une erreur est survenue",
   "description": "Nous n’avons pas pu envoyer votre message. Veuillez réessayer.",
   "backContact": "Retour au formulaire"
+},
+"metadata": {
+  "siteName": "EvolveD",
+  "defaultTitle": "EvolveD | Transformation digitale en Afrique",
+  "defaultDescription": "EvolveD accompagne la transformation digitale en Afrique à travers la formation, l'innovation et des solutions numériques accessibles.",
+  "home": {
+    "title": "EvolveD | Accueil",
+    "description": "Découvrez EvolveD, une startup digitale qui forme, innove et accompagne la transformation numérique en Afrique."
+  },
+  "about": {
+    "title": "EvolveD | Qui sommes-nous",
+    "description": "Découvrez la mission, la vision et les valeurs d’EvolveD pour une Afrique numériquement autonome."
+  },
+  "services": {
+    "title": "EvolveD | Services",
+    "description": "Explorez les services digitaux proposés par EvolveD : web, mobile, intelligence artificielle et cybersécurité."
+  },
+  "projects": {
+    "title": "EvolveD | Projets",
+    "description": "Consultez les projets en cours d’EvolveD et découvrez notre impact à travers des initiatives concrètes."
+  },
+  "contact": {
+    "title": "EvolveD | Contact",
+    "description": "Contactez EvolveD pour discuter de votre projet digital, de vos besoins en formation ou d’un partenariat."
+  }
 }
 }

@@ -2,6 +2,22 @@ import { redirect } from "next/navigation";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/getDictionary";
 import { supabaseServer } from "@/lib/supabase/server";
+import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/buildMetadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const dict = await getDictionary(locale);
+
+  return buildMetadata({
+    title: dict.metadata.contact.title,
+    description: dict.metadata.contact.description,
+  });
+}
 
 export default async function ContactPage({
   params,
