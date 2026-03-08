@@ -1,16 +1,19 @@
-import { redirect } from "next/navigation";
-import type { Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/getDictionary";
-import { supabaseServer } from "@/lib/supabase/server";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
+import { resolveLocale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/getDictionary";
 import { buildMetadata } from "@/lib/seo/buildMetadata";
+import { supabaseServer } from "@/lib/supabase/server";
+import Section from "@/components/Section";
+import PageHero from "@/components/PageHero";
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
   const dict = await getDictionary(locale);
 
   return buildMetadata({
@@ -22,9 +25,10 @@ export async function generateMetadata({
 export default async function ContactPage({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
   const dict = await getDictionary(locale);
 
   async function sendMessage(formData: FormData) {
@@ -32,7 +36,6 @@ export default async function ContactPage({
 
     const website = String(formData.get("website") ?? "").trim();
 
-    // Honeypot anti-spam
     if (website) {
       redirect(`/${locale}/contact/success`);
     }
@@ -64,53 +67,60 @@ export default async function ContactPage({
   }
 
   return (
-    <section className="space-y-6 py-12">
-      <h1 className="text-3xl font-bold">{dict.contactPage.title}</h1>
-      <p className="max-w-2xl text-gray-700">{dict.contactPage.description}</p>
+    <Section>
+      <div className="space-y-8">
+        <PageHero
+          title={dict.contactPage.title}
+          description={dict.contactPage.description}
+        />
 
-      <form action={sendMessage} className="max-w-lg space-y-4">
-        <div className="hidden">
-          <label htmlFor="website">Website</label>
+        <form action={sendMessage} className="max-w-xl space-y-4">
+          <div className="hidden">
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
           <input
-            id="website"
-            name="website"
-            type="text"
-            tabIndex={-1}
-            autoComplete="off"
+            name="name"
+            className="w-full rounded-xl border border-[var(--border)] p-3"
+            placeholder={locale === "fr" ? "Nom" : "Name"}
+            required
           />
-        </div>
 
-        <input
-          name="name"
-          className="w-full rounded border p-3"
-          placeholder={locale === "fr" ? "Nom" : "Name"}
-          required
-        />
-        <input
-          name="email"
-          type="email"
-          className="w-full rounded border p-3"
-          placeholder="Email"
-          required
-        />
-        <input
-          name="subject"
-          className="w-full rounded border p-3"
-          placeholder={locale === "fr" ? "Sujet" : "Subject"}
-          required
-        />
-        <textarea
-          name="message"
-          className="w-full rounded border p-3"
-          placeholder="Message"
-          rows={5}
-          required
-        />
+          <input
+            name="email"
+            type="email"
+            className="w-full rounded-xl border border-[var(--border)] p-3"
+            placeholder="Email"
+            required
+          />
 
-        <button className="rounded bg-black px-6 py-2 text-white hover:bg-gray-800">
-          {locale === "fr" ? "Envoyer" : "Send"}
-        </button>
-      </form>
-    </section>
+          <input
+            name="subject"
+            className="w-full rounded-xl border border-[var(--border)] p-3"
+            placeholder={locale === "fr" ? "Sujet" : "Subject"}
+            required
+          />
+
+          <textarea
+            name="message"
+            className="w-full rounded-xl border border-[var(--border)] p-3"
+            placeholder="Message"
+            rows={6}
+            required
+          />
+
+          <button className="rounded-xl bg-[var(--primary)] px-6 py-3 text-white transition hover:bg-[var(--primary-hover)]">
+            {locale === "fr" ? "Envoyer" : "Send"}
+          </button>
+        </form>
+      </div>
+    </Section>
   );
 }

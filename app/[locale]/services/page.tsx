@@ -1,22 +1,11 @@
-import { getDictionary } from "@/lib/i18n/getDictionary";
-import type { Locale } from "@/lib/i18n/config";
-import { supabaseServer } from "@/lib/supabase/server";
 import type { Metadata } from "next";
+import { resolveLocale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/getDictionary";
 import { buildMetadata } from "@/lib/seo/buildMetadata";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: Locale }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const dict = await getDictionary(locale);
-
-  return buildMetadata({
-    title: dict.metadata.services.title,
-    description: dict.metadata.services.description,
-  });
-}
+import { supabaseServer } from "@/lib/supabase/server";
+import Section from "@/components/Section";
+import PageHero from "@/components/PageHero";
+import Card from "@/components/Card";
 
 type ServiceRow = {
   id: string;
@@ -30,52 +19,74 @@ type ServiceRow = {
   is_active: boolean;
 };
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
+  const dict = await getDictionary(locale);
+
+  return buildMetadata({
+    title: dict.metadata.services.title,
+    description: dict.metadata.services.description,
+  });
+}
+
 export default async function ServicesPage({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
   const dict = await getDictionary(locale);
 
   const supabase = supabaseServer();
 
   const { data, error } = await supabase
     .from("services")
-    .select("id,slug,title_fr,title_en,description_fr,description_en,icon,position,is_active")
+    .select(
+      "id,slug,title_fr,title_en,description_fr,description_en,icon,position,is_active"
+    )
     .eq("is_active", true)
     .order("position", { ascending: true });
-
-  if (error) {
-    return (
-      <section className="space-y-4 py-12">
-        <h1 className="text-3xl font-bold">{dict.servicesPage.title}</h1>
-        <p className="text-red-600 text-sm">
-          Erreur lors du chargement des services: {error.message}
-        </p>
-      </section>
-    );
-  }
 
   const services = (data ?? []) as ServiceRow[];
 
   return (
-    <section className="space-y-6 py-12">
-      <h1 className="text-3xl font-bold">{dict.servicesPage.title}</h1>
-      <p className="max-w-2xl text-gray-700">{dict.servicesPage.description}</p>
+    <Section>
+      <div className="space-y-8">
+        <PageHero
+          title={dict.servicesPage.title}
+          description={dict.servicesPage.description}
+        />
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((s) => (
-          <div key={s.id} className="rounded-lg border p-5">
-            <h2 className="font-semibold">
-              {locale === "fr" ? s.title_fr : s.title_en}
-            </h2>
-            <p className="mt-2 text-sm text-gray-600">
-              {locale === "fr" ? s.description_fr : s.description_en}
-            </p>
-          </div>
-        ))}
+        {error && (
+          <p className="text-sm text-red-600">
+            {locale === "fr"
+              ? "Erreur lors du chargement des services."
+              : "Error while loading services."}
+          </p>
+        )}
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <Card key={service.id}>
+              <h2 className="text-lg font-semibold text-black">
+                {locale === "fr" ? service.title_fr : service.title_en}
+              </h2>
+
+              <p className="mt-3 leading-7 text-gray-600">
+                {locale === "fr"
+                  ? service.description_fr
+                  : service.description_en}
+              </p>
+            </Card>
+          ))}
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }

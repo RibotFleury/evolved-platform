@@ -1,31 +1,33 @@
 import Link from "next/link";
-import type { Locale } from "@/lib/i18n/config";
+import { resolveLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/getDictionary";
+import Section from "@/components/Section";
+import PageHero from "@/components/PageHero";
 
 export default async function ContactSuccessPage({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
   const dict = await getDictionary(locale);
 
   return (
-    <section className="space-y-6 py-12">
-      <h1 className="text-3xl font-bold">
-        {dict.contactSuccessPage.title}
-      </h1>
+    <Section>
+      <div className="space-y-8">
+        <PageHero
+          title={dict.contactSuccessPage.title}
+          description={dict.contactSuccessPage.description}
+        />
 
-      <p className="max-w-2xl text-gray-700">
-        {dict.contactSuccessPage.description}
-      </p>
-
-      <Link
-        href={`/${locale}`}
-        className="inline-block rounded bg-black px-6 py-2 text-white hover:bg-gray-800"
-      >
-        {dict.contactSuccessPage.backHome}
-      </Link>
-    </section>
+        <Link
+          href={`/${locale}`}
+          className="inline-block rounded-xl bg-[var(--primary)] px-6 py-3 text-white transition hover:bg-[var(--primary-hover)]"
+        >
+          {dict.contactSuccessPage.backHome}
+        </Link>
+      </div>
+    </Section>
   );
 }

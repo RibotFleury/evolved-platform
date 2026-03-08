@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/getDictionary";
 import { buildMetadata } from "@/lib/seo/buildMetadata";
+import { resolveLocale } from "@/lib/i18n/config";
 import Section from "@/components/Section";
 import PageHero from "@/components/PageHero";
 import Card from "@/components/Card";
@@ -9,9 +9,10 @@ import Card from "@/components/Card";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
   const dict = await getDictionary(locale);
 
   return buildMetadata({
@@ -23,9 +24,10 @@ export async function generateMetadata({
 export default async function AboutPage({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
   const dict = await getDictionary(locale);
 
   return (

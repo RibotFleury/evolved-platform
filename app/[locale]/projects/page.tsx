@@ -1,22 +1,11 @@
-import { getDictionary } from "@/lib/i18n/getDictionary";
-import type { Locale } from "@/lib/i18n/config";
-import { supabaseServer } from "@/lib/supabase/server";
 import type { Metadata } from "next";
+import { resolveLocale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/getDictionary";
 import { buildMetadata } from "@/lib/seo/buildMetadata";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: Locale }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const dict = await getDictionary(locale);
-
-  return buildMetadata({
-    title: dict.metadata.projects.title,
-    description: dict.metadata.projects.description,
-  });
-}
+import { supabaseServer } from "@/lib/supabase/server";
+import Section from "@/components/Section";
+import PageHero from "@/components/PageHero";
+import Card from "@/components/Card";
 
 type ProjectRow = {
   id: string;
@@ -31,70 +20,90 @@ type ProjectRow = {
   created_at: string;
 };
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
+  const dict = await getDictionary(locale);
+
+  return buildMetadata({
+    title: dict.metadata.projects.title,
+    description: dict.metadata.projects.description,
+  });
+}
+
 export default async function ProjectsPage({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
   const dict = await getDictionary(locale);
 
   const supabase = supabaseServer();
 
   const { data, error } = await supabase
     .from("projects")
-    .select("id,slug,title_fr,title_en,summary_fr,summary_en,status,category,tags,created_at")
+    .select(
+      "id,slug,title_fr,title_en,summary_fr,summary_en,status,category,tags,created_at"
+    )
     .order("created_at", { ascending: false });
-
-  if (error) {
-    return (
-      <section className="space-y-4 py-12">
-        <h1 className="text-3xl font-bold">{dict.projectsPage.title}</h1>
-        <p className="text-red-600 text-sm">
-          Erreur lors du chargement des projets: {error.message}
-        </p>
-      </section>
-    );
-  }
 
   const projects = (data ?? []) as ProjectRow[];
 
   return (
-    <section className="space-y-6 py-12">
-      <h1 className="text-3xl font-bold">{dict.projectsPage.title}</h1>
-      <p className="max-w-2xl text-gray-700">{dict.projectsPage.description}</p>
+    <Section>
+      <div className="space-y-8">
+        <PageHero
+          title={dict.projectsPage.title}
+          description={dict.projectsPage.description}
+        />
 
-      <div className="space-y-4">
-        {projects.map((p) => (
-          <div key={p.id} className="rounded-lg border p-5">
-            <div className="flex items-center justify-between">
-              <h2 className="font-semibold">
-                {locale === "fr" ? p.title_fr : p.title_en}
-              </h2>
-              <span className="rounded bg-gray-100 px-2 py-1 text-xs">
-                {p.status}
-              </span>
-            </div>
+        {error && (
+          <p className="text-sm text-red-600">
+            {locale === "fr"
+              ? "Erreur lors du chargement des projets."
+              : "Error while loading projects."}
+          </p>
+        )}
 
-            <p className="mt-2 text-sm text-gray-600">
-              {locale === "fr" ? p.summary_fr : p.summary_en}
-            </p>
+        <div className="space-y-4">
+          {projects.map((project) => (
+            <Card key={project.id}>
+              <div className="flex items-center justify-between gap-4">
+                <h2 className="text-lg font-semibold text-black">
+                  {locale === "fr" ? project.title_fr : project.title_en}
+                </h2>
 
-            {p.tags?.length ? (
-              <div className="mt-3 flex flex-wrap gap-2">
-                {p.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-700"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                <span className="rounded-full bg-[rgba(20,93,161,0.08)] px-3 py-1 text-xs font-medium text-[var(--primary)]">
+                  {project.status}
+                </span>
               </div>
-            ) : null}
-          </div>
-        ))}
+
+              <p className="mt-3 leading-7 text-gray-600">
+                {locale === "fr" ? project.summary_fr : project.summary_en}
+              </p>
+
+              {project.tags?.length ? (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+            </Card>
+          ))}
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }
