@@ -59,5 +59,15 @@
     "status": "En cours",
     "description": "Parcours de formation pratique orienté projets."
   }
-]
+],
+"contactSuccessPage": {
+  "title": "Message envoyé",
+  "description": "Merci pour votre message. Nous vous répondrons dès que possible.",
+  "backHome": "Retour à l’accueil"
+},
+"contactErrorPage": {
+  "title": "Une erreur est survenue",
+  "description": "Nous n’avons pas pu envoyer votre message. Veuillez réessayer.",
+  "backContact": "Retour au formulaire"
+}
 }
