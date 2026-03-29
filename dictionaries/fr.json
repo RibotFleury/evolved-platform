@@ -124,5 +124,94 @@
       "description": "Accompagner les entreprises et institutions dans leur évolution digitale."
     }
   ]
+},
+"homeStats": [
+  {
+    "value": "100+",
+    "label": "Talents à accompagner"
+  },
+  {
+    "value": "10+",
+    "label": "Projets digitaux à lancer"
+  },
+  {
+    "value": "5+",
+    "label": "Partenariats à construire"
+  },
+  {
+    "value": "1",
+    "label": "Vision pour transformer l'avenir"
+  }
+],  
+"aboutPage": {
+  "visionTitle": "Notre vision",
+  "visionDescription": "Bâtir une société africaine numériquement autonome, où les jeunes talents technologiques sont au cœur de l'innovation et du développement économique.",
+  "valuesTitle": "Nos valeurs",
+  "objectivesTitle": "Nos objectifs",
+  "impactTitle": "Notre impact",
+  "values": [
+    {
+      "title": "Innovation",
+      "description": "Nous encourageons la créativité et la recherche de solutions technologiques adaptées aux réalités africaines."
+    },
+    {
+      "title": "Apprentissage continu",
+      "description": "Nous croyons en la puissance de l’éducation et de la formation pour libérer le potentiel des jeunes talents."
+    },
+    {
+      "title": "Collaboration",
+      "description": "Nous travaillons avec les gouvernements, les entreprises, les écoles et les experts pour maximiser notre impact."
+    },
+    {
+      "title": "Impact social",
+      "description": "Nous concevons des solutions qui améliorent la vie des populations et soutiennent le développement durable."
+    }
+  ],
+  "objectives": [
+    "Lancer une plateforme digitale de formation technologique.",
+    "Développer des applications web et mobiles pour les PME et startups locales.",
+    "Créer un programme de mentorat pour accompagner les jeunes talents.",
+    "Devenir un acteur de référence de la transformation digitale en Afrique."
+  ],
+  "impactItems": [
+    "Former des milliers de jeunes aux compétences technologiques de demain.",
+    "Créer des emplois dans le secteur numérique.",
+    "Accompagner les entreprises dans leur transition digitale.",
+    "Stimuler l’innovation à travers des solutions locales."
+  ]
+},
+"servicesRich": {
+  "introTitle": "Des services pensés pour accélérer la transformation digitale",
+  "introDescription": "Nous combinons expertise technique, pédagogie et compréhension du contexte africain pour proposer des solutions utiles, accessibles et durables.",
+  "processTitle": "Comment nous accompagnons",
+  "processItems": [
+    {
+      "title": "Comprendre le besoin",
+      "description": "Nous analysons votre contexte, vos objectifs et vos défis avant de proposer une solution."
+    },
+    {
+      "title": "Concevoir la solution",
+      "description": "Nous structurons une approche claire, adaptée à votre réalité et à vos ressources."
+    },
+    {
+      "title": "Déployer et accompagner",
+      "description": "Nous mettons en œuvre la solution et accompagnons sa prise en main pour garantir l’impact."
+    }
+  ],
+  "ctaTitle": "Construisons votre prochain projet digital",
+  "ctaDescription": "Que vous soyez une entreprise, une institution ou un porteur de projet, EvolveD peut vous accompagner.",
+  "ctaButton": "Parler à notre équipe"
+},
+"projectsRich": {
+  "introTitle": "Des projets qui traduisent notre vision en action",
+  "introDescription": "Chaque projet porté par EvolveD reflète notre volonté de former, innover et accompagner la transformation digitale avec impact.",
+  "status": {
+    "ongoing": "En cours",
+    "done": "Terminé",
+    "paused": "En pause"
+  },
+  "ctaTitle": "Vous avez un projet à concrétiser ?",
+  "ctaDescription": "Nous pouvons collaborer pour concevoir une solution digitale utile, moderne et adaptée à votre contexte.",
+  "ctaButton": "Discuter de votre projet"
 }
 }

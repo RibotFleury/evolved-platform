@@ -125,5 +125,94 @@
       "description": "Supporting companies and institutions in their digital evolution."
     }
   ]
+},
+"homeStats": [
+  {
+    "value": "100+",
+    "label": "Talents to support"
+  },
+  {
+    "value": "10+",
+    "label": "Digital projects to launch"
+  },
+  {
+    "value": "5+",
+    "label": "Partnerships to build"
+  },
+  {
+    "value": "1",
+    "label": "Vision to transform the future"
+  }
+],
+"aboutPage": {
+  "visionTitle": "Our vision",
+  "visionDescription": "Building a digitally autonomous African society where young tech talents are at the heart of innovation and economic development.",
+  "valuesTitle": "Our values",
+  "objectivesTitle": "Our objectives",
+  "impactTitle": "Our impact",
+  "values": [
+    {
+      "title": "Innovation",
+      "description": "We encourage creativity and the search for technological solutions adapted to African realities."
+    },
+    {
+      "title": "Continuous learning",
+      "description": "We believe in the power of education and training to unlock the potential of young talents."
+    },
+    {
+      "title": "Collaboration",
+      "description": "We work with governments, companies, schools and experts to maximize our impact."
+    },
+    {
+      "title": "Social impact",
+      "description": "We design solutions that improve people’s lives and support sustainable development."
+    }
+  ],
+  "objectives": [
+    "Launch a digital platform for technology training.",
+    "Develop web and mobile applications for local SMEs and startups.",
+    "Create a mentoring program to support young talents.",
+    "Become a leading player in digital transformation in Africa."
+  ],
+  "impactItems": [
+    "Train thousands of young people in future digital skills.",
+    "Create jobs in the digital sector.",
+    "Support businesses in their digital transition.",
+    "Stimulate innovation through local solutions."
+  ]
+},
+"servicesRich": {
+  "introTitle": "Services designed to accelerate digital transformation",
+  "introDescription": "We combine technical expertise, pedagogy, and understanding of the African context to deliver useful, accessible, and sustainable solutions.",
+  "processTitle": "How we support you",
+  "processItems": [
+    {
+      "title": "Understand the need",
+      "description": "We analyze your context, goals, and challenges before proposing a solution."
+    },
+    {
+      "title": "Design the solution",
+      "description": "We build a clear approach adapted to your reality and resources."
+    },
+    {
+      "title": "Deploy and support",
+      "description": "We implement the solution and support adoption to ensure impact."
+    }
+  ],
+  "ctaTitle": "Let’s build your next digital project",
+  "ctaDescription": "Whether you are a company, an institution, or a project owner, EvolveD can support you.",
+  "ctaButton": "Talk to our team"
+},
+"projectsRich": {
+  "introTitle": "Projects that turn our vision into action",
+  "introDescription": "Each project led by EvolveD reflects our commitment to training, innovation, and impactful digital transformation.",
+  "status": {
+    "ongoing": "Ongoing",
+    "done": "Completed",
+    "paused": "Paused"
+  },
+  "ctaTitle": "Do you have a project to bring to life?",
+  "ctaDescription": "We can collaborate to design a useful, modern digital solution adapted to your context.",
+  "ctaButton": "Discuss your project"
 }
 }

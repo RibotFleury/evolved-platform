@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 
@@ -50,11 +51,25 @@ export default function Navbar({ labels }: { labels?: NavLabels }) {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-white/90 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+
+        {/* ── Logo ── */}
         <Link
           href={`/${currentLocale}`}
-          className="text-xl font-bold tracking-tight text-[var(--primary)]"
+          className="flex items-center gap-2"
         >
-          EvolveD
+          <div className="overflow-hidden rounded-full border border-[var(--border)] shadow-sm">
+            <Image
+              src="/images/evolved-bleu.jpeg"
+              alt="EvolveD logo"
+              width={36}
+              height={36}
+              className="h-9 w-9 object-cover"
+              priority
+            />
+          </div>
+          <span className="text-xl font-bold tracking-tight text-[var(--primary)]">
+            EvolveD
+          </span>
         </Link>
 
         <div className="flex items-center gap-3 md:gap-5">
