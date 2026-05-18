@@ -1,0 +1,26 @@
+<svg width="100%" viewBox="0 0 680 300" role="img" style="" xmlns="http://www.w3.org/2000/svg"><defs><mask id="imagine-text-gaps-dovfzi" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="680" height="300" fill="white"/><rect x="224" y="93" width="291.984375" height="77" fill="black" rx="2"/><rect x="224" y="173" width="289.484375" height="20" fill="black" rx="2"/></mask></defs>
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Logo Nettoya v2</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Logo minimaliste Nettoya inspiré du style Intact — forme géométrique verte + texte bold épuré</desc>
+
+  <rect x="100" y="50" width="480" height="200" rx="12" fill="#F7FBF8" style="fill:rgb(247, 251, 248);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Élément géométrique : carré vert avec encoche stylisée (inspiré Intact) -->
+  <g transform="translate(148, 108)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <!-- Carré principal vert foncé -->
+    <rect x="0" y="0" width="52" height="52" rx="4" fill="#1B6B3A" style="fill:rgb(27, 107, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Carré vert clair superposé décalé -->
+    <rect x="14" y="14" width="52" height="52" rx="4" fill="#52B788" style="fill:rgb(82, 183, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Petit carré blanc au centre pour effet de profondeur -->
+    <rect x="20" y="20" width="20" height="20" rx="2" fill="#F7FBF8" style="fill:rgb(247, 251, 248);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  </g>
+
+  <!-- Nom NETTOYA -->
+  <text x="228" y="152" font-family="Arial Black, Arial, sans-serif" font-size="52" font-weight="900" fill="#1B6B3A" letter-spacing="2" style="fill:rgb(27, 107, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Arial Black&quot;, Arial, sans-serif;font-size:52px;font-weight:900;text-anchor:start;dominant-baseline:auto">NETTOYA</text>
+
+  <!-- Ligne fine sous le nom -->
+  <line x1="228" y1="165" x2="558" y2="165" stroke="#52B788" stroke-width="1.5" mask="url(#imagine-text-gaps-dovfzi)" style="fill:rgb(0, 0, 0);stroke:rgb(82, 183, 136);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Slogan -->
+  <text x="228" y="188" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#52B788" letter-spacing="3" style="fill:rgb(82, 183, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial, sans-serif;font-size:13px;font-weight:400;text-anchor:start;dominant-baseline:auto">LA PROPRETÉ, NOTRE PASSION</text>
+
+</svg>
